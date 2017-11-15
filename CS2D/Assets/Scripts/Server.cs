@@ -138,7 +138,7 @@ public class Server : MonoBehaviour {
 			PlayerConnectedMessage playerConnectedMessage = PlayerConnectedMessage.CreatePlayerConnectedMessageToSend (playerToSendTo, playerId);
 			playerToSendTo.CommunicationManager.SendMessage (playerConnectedMessage);
 		}
-	}	
+	}
 
 	void ProcessDisconnectPlayer(DisconnectPlayerMessage disconnectPlayerMessage) {
 		Player player = GetPlayerWithEndPoint(disconnectPlayerMessage.From);

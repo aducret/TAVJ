@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerNetworkView : MonoBehaviour {
+public class PlayerNetworkView : MonoBehaviour
+{
+	public int Id { get; set; }
 
-	// Use this for initialization
-	void Start () {
+	private void Start() 
+	{
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	private void Update() 
+	{
 		
 	}
 }
