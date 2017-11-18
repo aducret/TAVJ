@@ -256,9 +256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverPort: 9000
   clientPort: 9001
-  fakeDelay: 0
-  fakePacketLoss: 0
-  snapshotSendRate: 1
+  fakeDelay: 0.1
+  fakePacketLoss: 0.1
+  snapshotSendRate: 60
   playerPrefab: {fileID: 1394931143170682, guid: f11c8388590024aca96c2ec53291845e,
     type: 2}
 --- !u!4 &245635769
@@ -1067,6 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 1394931143170682, guid: b5b40f33d5dcd2845a8615bc9f915f81,
     type: 2}
+  AmountOfBufferedSnapshots: 2
 --- !u!4 &1029501377
 Transform:
   m_ObjectHideFlags: 0
@@ -1576,7 +1577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 100
-  Level: 0
+  Level: 1
 --- !u!4 &1484450786
 Transform:
   m_ObjectHideFlags: 0
