@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 			_communicationManager.SendMessage(playerInputMessage);			
 			ClientDebug.Log(LogLevel.Info, _clientSharedData.Level, "Client - Sended player input (SHOOT) message.");
 		}
-
+	
 		ProcessSnapshots();
 		UpdateSimulationTime();
 	}
@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
 			var message = _communicationManager.GetMessage();
 			switch (message.Type) {
 				case MessageType.PLAYER_CONNECTED:
+					Debug.Log("PLAYER CONNECTED!!!");
 					ProcessPlayerConnectedMessage(message as PlayerConnectedMessage);
 					break;
 					
@@ -101,14 +102,14 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	private void ProcessPlayerConnectedMessage(PlayerConnectedMessage playerConnectedMessage)
+	public void ProcessPlayerConnectedMessage(PlayerConnectedMessage playerConnectedMessage)
 	{
 		var playerGo = Instantiate(PlayerPrefab) as GameObject;
 		if (playerGo != null)
 		{
-			playerGo.name = "PlayerNetworkView " + _clientSharedData.PlayerId;
+			playerGo.name = "PlayerNetworkView " + playerConnectedMessage.PlayerId;
 			var player = playerGo.GetComponent<PlayerNetworkView>();
-			player.Id = _clientSharedData.PlayerId;
+			player.Id = playerConnectedMessage.PlayerId;
 			_players.Add(player);
 		}
 	}

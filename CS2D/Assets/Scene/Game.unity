@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerController: {fileID: 1029501376}
-  ServerIP: 127.0.0.1
+  ServerIP: 10.17.66.106
   ServerPort: 9000
   ClientPort: 9001
 --- !u!4 &1828081607

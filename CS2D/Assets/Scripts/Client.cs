@@ -89,6 +89,7 @@ public class Client : MonoBehaviour
 		}
 		serverMessage.Load(bitBuffer);
 		LogServerMessage(messageType, serverMessage);
+
 		return serverMessage;
 	}
 
